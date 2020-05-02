@@ -22,12 +22,31 @@ public class MovementDefault : MonoBehaviour
                 this.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 5f), ForceMode2D.Impulse);
                 jump = false;
             }
-
         }
+
+
+
     }
 
     void OnCollisionEnter2D(Collision2D col)
     {
         jump = true;
     }
+
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "GroundMove")
+        {
+            if (collision.gameObject.GetComponent<BlockMovement>().right)
+            {
+                this.transform.Translate(1f * Time.deltaTime, 0, 0);
+            }
+            else
+            {
+                this.transform.Translate(-1f * Time.deltaTime, 0, 0);
+            }
+        }
+    }
+
 }

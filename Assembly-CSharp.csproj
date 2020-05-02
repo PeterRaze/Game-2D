@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\BlockMovement.cs" />
     <Compile Include="Assets\Scripts\MovementDefault.cs" />
     <Compile Include="Assets\Scripts\Test.cs" />
     <Reference Include="UnityEngine">
@@ -675,7 +676,18 @@
       <HintPath>C:/Users/pedro/Documents/Game 2D/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
-  <ItemGroup></ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Unity.2D.Tilemap.Extras.Editor.csproj">
+      <Project>{3DEBD308-CA05-D50E-BD75-45984F7E81C3}</Project>
+      <Name>Unity.2D.Tilemap.Extras.Editor</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="Unity.2D.Tilemap.Extras.csproj">
+      <Project>{AB692B4C-31E9-F69C-0715-03BA06D97A28}</Project>
+      <Name>Unity.2D.Tilemap.Extras</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
