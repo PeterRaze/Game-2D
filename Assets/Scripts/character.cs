@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
 
-public class coiso : MonoBehaviour
+public class character : MonoBehaviour
 {
     [SerializeField] private LayerMask groundLMask;
     public float velocity = 5;

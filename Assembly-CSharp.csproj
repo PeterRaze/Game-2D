@@ -64,7 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Test.cs" />
-    <Compile Include="Assets\Scripts\coiso.cs" />
+    <Compile Include="Assets\Scripts\character.cs" />
     <Reference Include="UnityEngine">
       <HintPath>D:/Program Files/Unity/2019.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
