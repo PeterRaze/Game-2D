@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 412783385}
   - component: {fileID: 412783388}
   - component: {fileID: 412783389}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: New SpriteShapeController (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -414,6 +414,11 @@ PrefabInstance:
       propertyPath: m_AngularDrag
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 383403300498223448, guid: a1eaf0c40ecb90d4d9be7e590ef1192f,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3434997138219280519, guid: a1eaf0c40ecb90d4d9be7e590ef1192f,
         type: 3}
       propertyPath: m_Name
@@ -483,6 +488,11 @@ PrefabInstance:
         type: 3}
       propertyPath: groundLMask.m_Bits
       value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 6356748804423907164, guid: a1eaf0c40ecb90d4d9be7e590ef1192f,
+        type: 3}
+      propertyPath: velocity
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1eaf0c40ecb90d4d9be7e590ef1192f, type: 3}
