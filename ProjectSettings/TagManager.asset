@@ -40,6 +40,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 2610412967
+    locked: 0
+  - name: Trap
+    uniqueID: 1392668285
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
