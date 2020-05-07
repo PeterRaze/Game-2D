@@ -10,12 +10,13 @@ public class EnemyMovement : MonoBehaviour
     float distanceTravelled;
     SpriteRenderer sprite;
     CircleCollider2D circleCollider;
+    float count;
 
-    public enum walkTypes {Raycast, Straight, Sinusoid};
+    public enum walkTypes {Raycast, Straight, Sinusoid, Vertical};
     public walkTypes WalkType;
 
     public float walkDistance = 6f;
-    public float verticalDisplacement = 0.5f;
+    public float walkSpeed = 1f;
 
     public float verticalSpeed = 5f;
     public float amplitude = 0.02f;
@@ -41,6 +42,9 @@ public class EnemyMovement : MonoBehaviour
           case walkTypes.Straight:
               distanceBasedWalk();
               break;
+          case walkTypes.Vertical:
+              verticalFloatBaseWalk();
+              break;
           default:
               sinusoidBasedWalk();
               break;
@@ -50,7 +54,7 @@ public class EnemyMovement : MonoBehaviour
     void raycastBasedWalk() {
 
         Vector3 rayInitPosition = transform.position + Vector3.down * circleCollider.radius;
-        RaycastHit2D hit = Physics2D.Raycast(rayInitPosition, Vector2.down, 2);
+        RaycastHit2D hit = Physics2D.Raycast(rayInitPosition, Vector2.down, 1);
 
         if (hit.collider != null)
         {
@@ -63,7 +67,7 @@ public class EnemyMovement : MonoBehaviour
     }
 
     void distanceBasedWalk() {
-        transform.Translate(direction * Vector3.right * Time.deltaTime, Camera.main.transform);
+        transform.Translate(direction * Vector3.right * Time.deltaTime * walkSpeed, Camera.main.transform);
         if (distanceTravelled > walkDistance) {
             direction *= -1;
             distanceTravelled = 0;
@@ -78,6 +82,16 @@ public class EnemyMovement : MonoBehaviour
             direction *= -1;
             distanceTravelled = 0;
             sprite.flipX = !sprite.flipX;
+        }
+    }
+
+    void verticalFloatBaseWalk() {
+        transform.Translate(Vector3.up * Mathf.Sin(Time.time * verticalSpeed) * amplitude, Camera.main.transform);
+        int random = Random.Range(3, 8);
+        count += Time.deltaTime;
+        if(count > random) {
+            sprite.flipX = !sprite.flipX;
+            count = 0;
         }
     }
 }
