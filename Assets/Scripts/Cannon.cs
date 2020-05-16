@@ -7,6 +7,7 @@ public class Cannon : MonoBehaviour
 
     public Bullet prefabbullet;
     private Bullet bullet;
+    public AudioSource audioSource;
 
     void Start()
     {
@@ -24,6 +25,7 @@ public class Cannon : MonoBehaviour
 
     private void InstantiateBullet()
     {
+        audioSource.Play();
         bullet = Instantiate(prefabbullet, transform);
         bullet.transform.localPosition = new Vector3(0.003f, -0.297f, 0);
     }
